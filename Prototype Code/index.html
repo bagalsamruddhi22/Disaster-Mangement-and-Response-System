@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+    <script src="https://mediafiles.botpress.cloud/8aaf59b6-b262-41c0-afcc-96bb37237b39/webchat/config.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Disaster Management System</h1>
+            <button id="ask-ai" class="btn">Ask our AI</button>
+        </header>
+
+        <section class="card">
+            <h2>Disaster Prediction</h2>
+            <form id="prediction-form">
+                <label for="user-latitude">Your Region's Latitude:</label>
+                <input type="number" id="user-latitude" step="any" required>
+                <label for="user-longitude">Your Region's Longitude:</label>
+                <input type="number" id="user-longitude" step="any" required>
+                <button type="submit" class="btn">Predict Disaster</button>
+            </form>
+            <div id="prediction-result" class="result"></div>
+        </section>
+
+        <section id="region-input-section" class="card" style="display: none;">
+            <h2>Region Information</h2>
+            <form id="region-form">
+                <label for="num-regions">Number of Affected Regions:</label>
+                <input type="number" id="num-regions" required>
+                <button type="submit" class="btn">Set Regions</button>
+            </form>
+            <div id="region-inputs"></div>
+        </section>
+
+        <section id="resource-allocation-section" class="card" style="display: none;">
+            <h2>Resource Allocation</h2>
+            <form id="resource-form">
+                <label for="medical_supplies">Medical Supplies (units):</label>
+                <input type="number" id="medical_supplies" required>
+                <label for="food">Food (kg):</label>
+                <input type="number" id="food" required>
+                <label for="rescue_teams">Rescue Teams (number of personnel):</label>
+                <input type="number" id="rescue_teams" required>
+                <button type="submit" class="btn">Allocate Resources</button>
+            </form>
+            <div id="resource-allocation" class="result"></div>
+        </section>
+
+        <section id="delegation-section" class="card" style="display: none;">
+            <h2>Delegation Tips</h2>
+            <div id="delegation-plan" class="result delegation-tips"></div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
